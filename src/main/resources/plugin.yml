@@ -1,0 +1,17 @@
+name: Clear_Shell
+author: $projectAuthor
+version: $projectVersion
+api-version: 1.16
+main: $projectMain
+
+commands:
+  clear:
+    description: This is main commands
+    usage: /clear console <automatic>
+    permission: plugin.clear_shell.op
+    permission-message: You're not OP!
+
+permissions:
+  plugin.clear_shell.op:
+    description: This si main permission
+    default: op

@@ -1,0 +1,7 @@
+clearShell:
+  runAutomatic:
+    # Runnable Clear Shell
+    active: true
+
+    # 1000ms = 1second, 60000ms = 1minuet, 3600000ms = 1hour
+    delay: 3600000
