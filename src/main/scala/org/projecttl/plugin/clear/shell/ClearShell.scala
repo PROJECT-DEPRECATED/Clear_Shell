@@ -19,7 +19,7 @@ class ClearShell extends JavaPlugin {
     // load()
     getLogger.info("Plugin has enabled.")
 
-    getCommand("clear").setExecutor(new ClearShellCommand(this))
+    getCommand("clear").setExecutor(new ClearShellCommand(/*this*/))
     getCommand("clear").setTabCompleter(new ArgumentForClearShellCommand)
   }
 
