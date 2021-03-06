@@ -7,7 +7,7 @@ main: $projectMain
 commands:
   clear:
     description: This is main commands
-    usage: /clear console <automatic>
+    usage: /clear console #<automatic>
     permission: plugin.clear_shell.op
     permission-message: You're not OP!
 

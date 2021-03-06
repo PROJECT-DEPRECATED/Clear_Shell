@@ -5,17 +5,18 @@ import org.bukkit.configuration.file.{FileConfiguration, YamlConfiguration}
 import org.bukkit.plugin.java.JavaPlugin
 import org.projecttl.plugin.clear.shell.commands.ClearShellCommand
 import org.projecttl.plugin.clear.shell.commands.arguments.ArgumentForClearShellCommand
-import org.projecttl.plugin.clear.shell.utils.RunAutomatic
 
 import java.io.File
 
 class ClearShell extends JavaPlugin {
 
+  /*
   private var file: File = _
   private var autoClearConfig: FileConfiguration = _
+   */
 
   override def onEnable(): Unit = {
-    load()
+    // load()
     getLogger.info("Plugin has enabled.")
 
     getCommand("clear").setExecutor(new ClearShellCommand(this))
@@ -23,12 +24,13 @@ class ClearShell extends JavaPlugin {
   }
 
   override def onDisable(): Unit = {
-    save()
+    // save()
     getLogger.info("Plugin has disabled.")
   }
 
+  /*
   private def load(): Unit = {
-    file = new File(getDataFolder, "automaticShellClear.yml")
+    file = new File(getDataFolder, "config.yml")
     autoClearConfig = YamlConfiguration.loadConfiguration(file)
 
     try {
@@ -37,8 +39,6 @@ class ClearShell extends JavaPlugin {
       }
 
       autoClearConfig.load(file)
-      val runAutomatic = new RunAutomatic(instance = this)
-      runAutomatic.runAutomatic()
 
       Bukkit.broadcastMessage(s"<Clear_Shell> ${ChatColor.GOLD}Config has successful loaded.")
     } catch {
@@ -55,4 +55,5 @@ class ClearShell extends JavaPlugin {
   def getAutoClearConfig: FileConfiguration = {
     autoClearConfig
   }
+   */
 }

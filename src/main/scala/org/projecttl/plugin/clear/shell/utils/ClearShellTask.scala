@@ -1,25 +1,10 @@
 package org.projecttl.plugin.clear.shell.utils
 
-object ClearShellTask extends Thread {
+object ClearShellTask {
 
-  override def run(): Unit = {
-    val process = new ProcessBuilder
-
-    try {
-      if (System.getProperty("os.name").toLowerCase.startsWith("windows")) {
-        process.command("cmd.exe", "/c", "cls")
-      } else {
-        process.command("sh", "-c", "clear")
-      }
-    } catch {
-      case exception: Exception =>
-        exception.printStackTrace()
-    }
-  }
-
-  def clearMinecraftConsole(): Unit = {
+  def clearConsole(): Unit = {
     var count: Int = 0
-    val fixCount: Int = 20
+    val fixCount: Int = 50
 
     while (count <= fixCount) {
       println("\n")

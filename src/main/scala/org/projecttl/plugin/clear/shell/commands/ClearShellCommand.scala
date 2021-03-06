@@ -4,11 +4,9 @@ import org.bukkit.command.{Command, CommandExecutor, CommandSender}
 import org.bukkit.entity.Player
 import org.bukkit.{Bukkit, ChatColor}
 import org.projecttl.plugin.clear.shell.ClearShell
-import org.projecttl.plugin.clear.shell.utils.{ClearShellTask, RunAutomatic}
+import org.projecttl.plugin.clear.shell.utils.ClearShellTask
 
-class ClearShellCommand(instance: ClearShell) extends CommandExecutor {
-
-  private val plugin: ClearShell = null
+class ClearShellCommand/*(private var plugin: ClearShell)*/ extends CommandExecutor {
 
 
   override def onCommand(sender: CommandSender, command: Command, label: String, args: Array[String]): Boolean = {
@@ -26,20 +24,8 @@ class ClearShellCommand(instance: ClearShell) extends CommandExecutor {
 
         else if (args.length == 1) {
           if (args(0).equalsIgnoreCase("console")) {
-            ClearShellTask.clearMinecraftConsole()
+            ClearShellTask.clearConsole()
             Bukkit.broadcastMessage(s"<Clear_Shell> ${ChatColor.GREEN}This console has successful cleared.")
-          }
-        }
-
-          else if (args.length == 2) {
-          if (args(0).equalsIgnoreCase("console")) {
-            if (args(1).equalsIgnoreCase("automatic")) {
-              val run = new RunAutomatic(plugin)
-              run.runAutomatic()
-
-              Bukkit.broadcastMessage(s"<Clear_Shell> ${ChatColor.GREEN}This console has successful cleared.")
-              return true
-            }
           }
         }
       }
